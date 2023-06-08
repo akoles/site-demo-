@@ -6,7 +6,7 @@ use Illuminate\Http\Request;
 
 class ApiController extends Controller
 {
-    public function index(): View
+    public function index(): \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View
     {
         $response = Http::get('https://api.privatbank.ua/p24api/pubinfo?
 json&exchange&coursid=5');

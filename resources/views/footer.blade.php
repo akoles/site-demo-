@@ -8,13 +8,7 @@
     <title>Document</title>
 </head>
 <body>
-<div class="row">
-    <div class="col-9"><h4>Footer settings</h4></div>
-    <div class="col-3 d-grid">
-        <a href="footerset" class="btn btn-info"
-           role="button">Edit</a>
-    </div>
-</div>
+
 
 <footer class="bg-light text-center text-white">
 
@@ -41,7 +35,7 @@
             <a
                 class="btn text-white btn-floating m-1"
                 style="background-color: #55acee;"
-                href="https://www.twiter.com"
+                href="https://www.twitter.com"
                 role="button"
             ><i class="fab fa-twitter"></i
                 ><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-twitter" viewBox="0 0 16 16">
@@ -59,7 +53,7 @@
             <a
                 class="btn text-white btn-floating m-1"
                 style="background-color: #ac2bac;"
-                href="http://www.instasgram.com"
+                href="http://www.instagram.com"
                 role="button"
             ><i class="fab fa-instagram"></i
                 ><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-instagram" viewBox="0 0 16 16">

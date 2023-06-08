@@ -15,7 +15,28 @@
 </head>
 <body>
 
+
+
+
+
+
 <h1>HI, {{$name}}</h1>
+
+@yield('convertor')
+
+
+
+
+
+
+
+Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam cum cumque cupiditate dolorum, eaque earum error impedit neque nihil nisi possimus quaerat reiciendis rem sint soluta tenetur unde veritatis voluptatum.
+
+
+
+
+
+
 
 
 

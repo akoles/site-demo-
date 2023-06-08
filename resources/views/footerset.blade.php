@@ -33,21 +33,14 @@
                             </script>
                             <script type="text/javascript">
                                 function set_enabled() {
-//disable last row deletion routine
                                     let minimumrows = $("button[value='minus']");
                                     if (minimumrows.length === 1) {
-                                        minimumrows.prop("disabled", true);
-                                    } else {
-                                        minimumrows.prop("disabled", false);
-                                    }
-//disbale add over rows
+                                        minimumrows.prop("disabled", true); } else {
+                                        minimumrows.prop("disabled", false); }
                                     let maximurows = $("button[value='plus']");
                                     if (maximurows.length === 10) {
-                                        maximurows.prop("disabled", true);
-                                    } else {
-                                        maximurows.prop("disabled", false);
-                                    }
-                                }
+                                        maximurows.prop("disabled", true); } else {
+                                        maximurows.prop("disabled", false); } }
                                 $(document).ready(
                                     function () {
                                         set_enabled();//set button’s state when page is loaded

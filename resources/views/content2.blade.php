@@ -2,6 +2,8 @@
 <html lang="en">
 <head>
 
+    @include('menu')
+    <div style="height; 500px"> "</div>
     <meta charset="UTF-8">
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
@@ -9,8 +11,12 @@
     <title>Document</title>
 </head>
 <body>
-<div class="d-flex" style="height: 200px;">
-    <div class="vr"></div>
+<div class="row">
+    <div class="col-9"><h4>Footer settings</h4></div>
+    <div class="col-3 d-grid">
+        <a href="footerset" class="btn btn-info"
+           role="button">Edit</a>
+    </div>
 </div>
 </body>
 </html>

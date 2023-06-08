@@ -54,11 +54,11 @@ Route::get('/Market', function () {
 Route::get('/Privacysettings', function () {
     return view('privacysettings');
 });
-Route::get('/Settings', function () {
-    return view('Settings');
+
+
+Route::get('/convertor', function () {
+    return view('convertor');
 });
-
-
 
 
 Auth::routes();
@@ -69,4 +69,6 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 
 Route::resource('/footerset', \App\Http\Controllers\FooterController::class );
 
-Route::get(‘api’,\App\Http\Controllers\ApiController::class);
+Route::get('api',[\App\Http\Controllers\ApiController::class,'index']);
+//Route::resource(‘{route}’, {Name}Controller::class)->only([‘{post}’,‘{metjod2}’])->middleware(['auth', 'verified']);
+//Route::resource(‘{route}’, {Name}Controller::class)->only([‘{method1}’,‘{metjod2}’])->middleware(['auth', 'verified']);

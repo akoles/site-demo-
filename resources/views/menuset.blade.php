@@ -15,6 +15,7 @@
     </div>
     <form action="" method="post">
         @csrf
+        @isset($data)
         @foreach( $data as $menu)
             <div class="input-group mb-3">
                 <span class="input-group-text">Tiltle:</span>
@@ -25,6 +26,7 @@
                 <button type="button" class="btn bg-success" value="plus">+</button>
 
         @endforeach
+                @endisset
                 <div class="d-grid gap-2">
                     <input type="submit" class="btn bg-info" value="Send">
                 </div>
