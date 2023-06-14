@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Titleset;
 use Illuminate\Http\Request;
 use App\Models\Menuset;
 
@@ -24,7 +25,7 @@ class HomeController extends Controller
      */
     public function index()
     {  $val = Menuset::all();
-        return view('home',['data'=>$val]);
+        return view('currencies',['data' => Menuset::all(),'title'=>Titleset::all()]);
 
     }
 
@@ -41,7 +42,7 @@ class HomeController extends Controller
         foreach ($data as $k => $v) {
             Menuset::create([ 'title' => $k, 'link' => $v]); //create new row intable
 }
-        return redirect('home'); //go to dashboard
+        return redirect('currencies');
     }
 }
 

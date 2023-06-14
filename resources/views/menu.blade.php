@@ -16,7 +16,7 @@
 </body>
 </html>
 
-@include(welcome)
+
 <nav class="navbar navbar-expand-lg bg-body-tertiary fixed-top">
     <div class="container-fluid">
 

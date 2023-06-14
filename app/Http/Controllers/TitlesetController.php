@@ -15,7 +15,7 @@ class TitlesetController extends Controller
     public function index()
     {
         $val = Titleset::all();
-        return view('Titleset',['data'=>$val]);
+        return view('currencies',['title' => Titleset::all(),'data'=>Menuset::all()]);
     }
 
     /**
@@ -36,7 +36,18 @@ class TitlesetController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        if ($request->isMethod('post')) {
+            $data = $request->post();
+        }
+
+        $titles = $data['title'];
+
+
+        DB::table('titlesets')->truncate();//remove all data from table in DB
+
+        Titleset::create(['title' => $titles]); //create new row in table
+
+        return redirect('currencies');
     }
 
     /**

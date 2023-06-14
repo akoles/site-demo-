@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Menuset;
+use App\Models\Titleset;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\View\View;
@@ -16,7 +17,7 @@ class MenusetController extends Controller
     public function index()
     {
         $val = Menuset::all();
-        return view('menuset', ['data' => $val]);
+        return view('menuset', ['data' => Menuset::all(),'title' => Titleset::all()]);
     }
 
 
@@ -52,7 +53,7 @@ class MenusetController extends Controller
         foreach ($data as $k => $v) {
             Menuset::create([ 'title' => $k, 'link' => $v]); //create new row intable
 }
-        return redirect('home'); //go to dashboard
+        return redirect('currencies'); //go to dashboard
     }
 
     /**

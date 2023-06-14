@@ -48,7 +48,7 @@ class FooterController extends Controller
             Footer::create([ 'title' => $k, 'link' => $v]); //create new row intable
 }return redirect('footer'); //go to dashboard
     }
-    }
+
 
     /**
      * Display the specified resource.
