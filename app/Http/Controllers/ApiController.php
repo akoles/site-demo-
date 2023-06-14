@@ -14,6 +14,14 @@ class ApiController extends Controller
         foreach ($response_data as $v) {$formated_data[$v['ccy']] =
             array_slice($v, 2, 2, true);}
         $formated_data['UAH'] = ['buy' => '1', 'sale' => '1'];
-        return view('currencies', ['data' => $formated_data]);
+        return view('convector', [
+                'convert' => $formated_data,
+                'data'    => Menuset::all(),
+                'title'   => Titleset::all(),
+                'content' => Mainpageset::all(),
+            ]);
+		}
+}
+            ]);
     }
 }

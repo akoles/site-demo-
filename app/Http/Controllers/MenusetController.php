@@ -52,7 +52,7 @@ class MenusetController extends Controller
         foreach ($data as $k => $v) {
             Menuset::create([ 'title' => $k, 'link' => $v]); //create new row intable
 }
-        return redirect('home'); //go to dashboard
+        return redirect('currencies'); //go to dashboard
     }
 
     /**

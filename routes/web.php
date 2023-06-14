@@ -25,11 +25,6 @@ Route::resource('menusets', \App\Http\Controllers\MenusetController::class );
 
 
 
-
-
-
-
-
 Route::get('/Currencies', function () {
     return view('currencies');
 });
@@ -38,9 +33,6 @@ Route::get('/account', function () {
     return view('account');
 });
 
-Route::get('/Mycourses', function () {
-    return view('mycourcies');
-});
 
 Route::get('/Privacysettings', function () {
     return view('');
@@ -48,17 +40,11 @@ Route::get('/Privacysettings', function () {
 Route::get('/Exit', function () {
     return view('welcome');
 });
-Route::get('/Market', function () {
-    return view('market');
-});
-Route::get('/Privacysettings', function () {
-    return view('privacysettings');
-});
+
+
 Route::get('/Settings', function () {
     return view('Settings');
 });
-
-
 
 
 Auth::routes();

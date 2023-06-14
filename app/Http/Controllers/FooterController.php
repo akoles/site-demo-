@@ -15,7 +15,7 @@ class FooterController extends Controller
      */
     public function index()
     {$val = footer::all();
-        return view('footer',['data'=>$val]);
+        return view('footer',['data'=> Menuset::all(),'title'=>Titleset::all()]);
     }
 
     /**
@@ -48,7 +48,7 @@ class FooterController extends Controller
             Footer::create([ 'title' => $k, 'link' => $v]); //create new row intable
 }return redirect('footer'); //go to dashboard
     }
-    }
+    };
 
     /**
      * Display the specified resource.
@@ -68,9 +68,9 @@ class FooterController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function edit(Footer $footer)
-    {
-        //
-    }
+{
+    //
+}
 
     /**
      * Update the specified resource in storage.
