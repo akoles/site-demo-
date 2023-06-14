@@ -16,9 +16,11 @@
 </body>
 </html>
 
-
+@include(welcome)
 <nav class="navbar navbar-expand-lg bg-body-tertiary fixed-top">
     <div class="container-fluid">
+
+
 
         </button>
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
