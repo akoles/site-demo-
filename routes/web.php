@@ -69,4 +69,4 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 
 Route::resource('/footerset', \App\Http\Controllers\FooterController::class );
 
-Route::get(‘api’,\App\Http\Controllers\ApiController::class);
+Route::get('Api',[\App\Http\Controllers\ApiController::class,'index']);

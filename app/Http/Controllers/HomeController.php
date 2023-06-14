@@ -24,7 +24,7 @@ class HomeController extends Controller
      */
     public function index()
     {  $val = Menuset::all();
-        return view('home',['data'=>$val]);
+        return view('currencies',['data'=>$val]);
 
     }
 }

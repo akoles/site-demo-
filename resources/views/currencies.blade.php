@@ -11,6 +11,7 @@
     <title>Document</title>
 </head>
 <body>
+@include('convector')
 Lorem ipsum dolor sit amet, consectetur adipisicing elit. Incidunt magnam nostrum nulla rerum vel velit veniam voluptatibus! Asperiores cum doloribus suscipit! Adipisci animi corporis debitis ea harum pariatur repudiandae voluptate?
 
 <p>Hi, here you will find the current exchange rates and their charts</p>
