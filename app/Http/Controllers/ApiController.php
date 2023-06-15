@@ -2,16 +2,17 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Mainpageset;
+use App\Models\Footer;
 use App\Models\Menuset;
 use App\Models\Titleset;
 use Illuminate\Http\Request;
-
+use Illuminate\Support\Facades\Http;
+use Illuminate\View\View;
 class ApiController extends Controller
 {
-    public function index(): \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View
+    public function index():View
     {
-        $response      = Http::get('https://api.privatbank.ua/p24api/pubinfo?&exchange&coursid=5');
+        $response      = Http::get('https://api.privatbank.ua/p24api/pubinfo?json&exchange&coursid=5');
         $response_data = $response->json();
         $formated_data = [];
         foreach ($response_data as $v) {
@@ -19,10 +20,10 @@ class ApiController extends Controller
         }
         $formated_data['UAH'] = ['buy' => '1', 'sale' => '1'];
 
-        return view('index', [
+        return view('currencies', [
             'convert' => $formated_data,
             'data'    => Menuset::all(),
             'title'   => Titleset::all(),
-            'content' => Mainpageset::all(),
+            'content' => Footer::all(),
         ]);
     }
