@@ -14,7 +14,9 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {$this->call([MenusetSeeder::class]);
-        $this->call([MainpagesetSeeder::class]);
+        $this->call([MainpageSeeder::class]);
+        $this->call([FooterSeeder::class]);
+        $this->call([TitlesetSeeder::class]);
         // \App\Models\User::factory(10)->create();
 
         // \App\Models\User::factory()->create([

@@ -1,5 +1,5 @@
 @extends('layouts.app')
-
+@section('content')
 <script src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
 
 <script type="text/javascript">
@@ -39,7 +39,7 @@
     });
 </script>
 
-@section('content')
+
     <div class="container">
         <div class="row justify-content-center">
             <div class="col-md-8">

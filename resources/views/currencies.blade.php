@@ -11,12 +11,7 @@
     <title>Document</title>
 </head>
 <body>
-Lorem ipsum dolor sit amet, consectetur adipisicing elit. Incidunt magnam nostrum nulla rerum vel velit veniam voluptatibus! Asperiores cum doloribus suscipit! Adipisci animi corporis debitis ea harum pariatur repudiandae voluptate?
-
-<p>Hi, here you will find the current exchange rates and their charts</p>
-
-<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid aperiam atque consequuntur culpa cupiditate, fuga iure nemo nesciunt nihil odio ratione reiciendis sint sunt, unde voluptatem? Aliquam deserunt tempora vitae?</p>
-
+@include('convertor')
 
 
 @include('footer')

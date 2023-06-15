@@ -8,16 +8,14 @@
     <title>Document</title>
 </head>
 <body>
-
-
 <footer class="bg-light text-center text-white">
 
     <div class="container p-4 pb-0">
-        <ul class="container p-4 pb-0 ">
+        <ul class="container p-4 pb-0">
             @isset($data)
-            @foreach( $data as $menu)
-                <li class="nav-item active">
-                    <a class="container p-4 pb-0" href="<?=$menu->link?>"><? =$menu->title?></a>
+            @foreach( $data as $footer)
+                <li class="container p-4 pb-0">
+                    <a class="container p-4 pb-0" href="<?=$forter->link?>"><?=$footer->title?></a>
                 </li>
             @endforeach
             @endisset

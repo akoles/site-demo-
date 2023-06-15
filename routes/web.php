@@ -22,6 +22,8 @@ Route::get('/saymyname/{name?}/', function (string $name = 'default') {
     return view('saymyname', ['name' => $name]);
 });
 Route::resource('menusets', \App\Http\Controllers\MenusetController::class);
+Route::resource('footerset', \App\Http\Controllers\FooterController::class);
+Route::resource('menusets', \App\Http\Controllers\TitlesetController::class);
 
 
 Route::get('/Currencies', function () {
@@ -56,6 +58,10 @@ Route::get('/convertor', function () {
 
 Route::get('/menuset', function () {
     return view('menuset');
+});
+Route::get('/titleset', function () {
+    return view('titleset');
+
 });
     Auth::routes();
 

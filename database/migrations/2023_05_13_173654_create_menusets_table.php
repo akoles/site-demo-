@@ -16,8 +16,8 @@ return new class extends Migration
         Schema::create('menusets', function (Blueprint $table)    {
             $table->id();
             $table->timestamps();
-            $table->string('title');
-            $table->string('link');
+            $table->text('title');
+            $table->text('link');
 
         }  );
     }

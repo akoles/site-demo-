@@ -48,7 +48,7 @@
                                 <div class="row">
                                     <div class="col-9"><h4>Footer settings</h4></div>
                                     <div class="col-3 d-grid">
-                                        <a href="footerset.blade.php" class="btn btn-info" role="button">Edit...</a>
+                                        <a href="footerset" class="btn btn-info" role="button">Edit...</a>
                                     </div>
                                 </div>
                             </li>
