@@ -1,5 +1,5 @@
 @extends('layouts.app')
-@section('content')
+
 <script src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
 
 <script type="text/javascript">
@@ -39,7 +39,7 @@
     });
 </script>
 
-
+@section('content')
     <div class="container">
         <div class="row justify-content-center">
             <div class="col-md-8">
@@ -48,7 +48,7 @@
                         <div class="row align-items-center">
                             <div class="col-md-11"> Menu Settings</div>
                             <div class="col-md-1">
-                                <a class="btn btn-primary bg-warning float-end" href="dashboard" role="button">Back</a>
+                                <a class="btn btn-primary bg-warning float-end" href="/account" role="button">Back</a>
                             </div>
                         </div>
                     </div>
@@ -79,5 +79,4 @@
         </div>
     </div>
 @endsection
-
 

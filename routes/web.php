@@ -38,8 +38,8 @@ Route::get('/Mycourses', function () {
     return view('mycourcies');
 });
 
-Route::get('/Privacysettings', function () {
-    return view('');
+Route::get('/menu', function () {
+    return view('menu');
 });
 Route::get('/Exit', function () {
     return view('welcome');

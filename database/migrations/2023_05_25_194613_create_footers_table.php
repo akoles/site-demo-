@@ -18,6 +18,7 @@ return new class extends Migration
             $table->timestamps();
             $table->string('title');
             $table->string('link');
+            $table->string('svg');
         });
     }
 

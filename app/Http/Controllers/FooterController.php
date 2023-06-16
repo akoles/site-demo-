@@ -11,11 +11,11 @@ class FooterController extends Controller
     /**
      * Display a listing of the resource.
      *
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View
      */
-    public function index()
-    {$val = footer::all();
-        return view('footer',['data'=>$val]);
+    public function index(){
+
+        return view('footerset', ['data' =>  footer::all()]);
     }
 
     /**
@@ -31,10 +31,10 @@ class FooterController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param \Illuminate\Http\Request $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request):RedirectResponse
+    public function store(Request $request): RedirectResponse
     {
         if ($request->isMethod('post')) {
             $data = $request->post();
@@ -42,18 +42,20 @@ class FooterController extends Controller
         array_shift($data);//remove first element with token info
         $titles = $data['row']['title'];
         $links = $data['row']['link'];
-        $data = array_combine($titles, $links);
+        $svg = $data['row']['svg'];
+        $data = array_combine($titles, $links, $svg);
         DB::table('footer')->truncate();//remove all data from table in DB
         foreach ($data as $k => $v) {
-            Footer::create([ 'title' => $k, 'link' => $v]); //create new row intable
-}return redirect('footer'); //go to dashboard
+            Footer::create(['title' => $k, 'link' => $v, 'svg' => $s]); //create new row intable
+        }
+        return redirect('footerset'); //go to dashboard
     }
 
 
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\Footer  $footer
+     * @param \App\Models\Footer $footer
      * @return \Illuminate\Http\Response
      */
     public function show(Footer $footer)
@@ -64,7 +66,7 @@ class FooterController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\Footer  $footer
+     * @param \App\Models\Footer $footer
      * @return \Illuminate\Http\Response
      */
     public function edit(Footer $footer)
@@ -75,8 +77,8 @@ class FooterController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Footer  $footer
+     * @param \Illuminate\Http\Request $request
+     * @param \App\Models\Footer $footer
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, Footer $footer)
@@ -87,7 +89,7 @@ class FooterController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\Footer  $footer
+     * @param \App\Models\Footer $footer
      * @return \Illuminate\Http\Response
      */
     public function destroy(Footer $footer)

@@ -26,8 +26,8 @@
     window.lastinput = 0;
 
     $(document).ready(function () {
-        $('#mySelect1 option[value="option3"]').prop('selected', true);//default uah
-        $('#mySelect2 option[value="option2"]').prop('selected', true);//default usd
+        $('#mySelect1 option[value='option3']').prop('selected', true);//default uah
+        $('#mySelect2 option[value='option2']').prop('selected', true);//default usd
         conv($('#inp1').val(), 'buy');
     });
 
