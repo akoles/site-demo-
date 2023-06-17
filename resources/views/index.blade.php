@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-    @include('converter')
+    @include('convertor')
     @if (isset($content))
         @foreach( $content as $d)
             <p><?=$d->content?></p>

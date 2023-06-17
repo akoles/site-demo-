@@ -5,6 +5,7 @@ use App\Models\Menuset;
 use App\Models\Titleset;
 use App\Models\Mainpageset;
 use App\Http\Controllers\ApiController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -23,10 +24,11 @@ Route::get('/', function (string $home = 'defoult') {
 Route::get('/saymyname/{name?}/', function (string $name = 'default') {
     return view('saymyname', ['name' => $name]);
 });
-Route::resource('menusets', \App\Http\Controllers\MenusetController::class);
-Route::resource('footerset', \App\Http\Controllers\FooterController::class);
-Route::resource('menusets', \App\Http\Controllers\TitlesetController::class);
 
+
+Route::get('/index', function () {
+    return view('index');
+});
 
 Route::get('/Currencies', function () {
     return view('currencies');
@@ -65,14 +67,17 @@ Route::get('/titleset', function () {
     return view('titleset');
 
 });
-    Auth::routes();
+Auth::routes();
+Route::get('/', [\App\Http\Controllers\ApiController::class, 'index']);
+
+Route::resource('titlesets', \App\Http\Controllers\TitlesetController::class);
+Route::resource('menusets', \App\Http\Controllers\MenusetController::class);
+Route::resource('mainpageset', \App\Http\Controllers\MainpageController::class);
+Route::resource ('guzzle', \App\Http\Controllers\GuzzleController::class);
 
     Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-
-
     Route::resource('/footerset', \App\Http\Controllers\FooterController::class);
 
-    Route::get('/api', [\App\Http\Controllers\ApiController::class, 'index']);
 /*Route::resource(‘{route}’, {Name}Controller::class)->only([‘{post}’,‘{metjod2}’])->middleware(['auth', 'verified']);
 Route::resource(‘{route}’, {Name}Controller::class)->only([‘{method1}’,‘{metjod2}’])->middleware(['auth', 'verified']);*/
 
