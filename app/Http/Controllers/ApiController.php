@@ -5,7 +5,6 @@ namespace App\Http\Controllers;
 use App\Models\Footer;
 use App\Models\Menuset;
 use App\Models\Titleset;
-use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Http;
 use Illuminate\View\View;
 class ApiController extends Controller
@@ -20,7 +19,7 @@ class ApiController extends Controller
         }
         $formated_data['UAH'] = ['buy' => '1', 'sale' => '1'];
 
-        return view('currencies', [
+        return view('index', [
             'convert' => $formated_data,
             'data'    => Menuset::all(),
             'title'   => Titleset::all(),

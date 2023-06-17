@@ -21,13 +21,13 @@
 </div>
 
 <script src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
+<script type="text/javascript">
 
-<script>
     window.lastinput = 0;
 
     $(document).ready(function () {
-        $('#mySelect1 option[value='option3']').prop('selected', true);//default uah
-        $('#mySelect2 option[value='option2']').prop('selected', true);//default usd
+        $('#mySelect1 option[value="option3"]').prop('selected', true);//default uah
+        $('#mySelect2 option[value="option2"]').prop('selected', true);//default usd
         conv($('#inp1').val(), 'buy');
     });
 

@@ -2,7 +2,9 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Models\Menuset;
-
+use App\Models\Titleset;
+use App\Models\Mainpageset;
+use App\Http\Controllers\ApiController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -70,6 +72,7 @@ Route::get('/titleset', function () {
 
     Route::resource('/footerset', \App\Http\Controllers\FooterController::class);
 
-    Route::get('api', [\App\Http\Controllers\ApiController::class, 'index']);
-//Route::resource(‘{route}’, {Name}Controller::class)->only([‘{post}’,‘{metjod2}’])->middleware(['auth', 'verified']);
-//Route::resource(‘{route}’, {Name}Controller::class)->only([‘{method1}’,‘{metjod2}’])->middleware(['auth', 'verified']);
+    Route::get('/api', [\App\Http\Controllers\ApiController::class, 'index']);
+/*Route::resource(‘{route}’, {Name}Controller::class)->only([‘{post}’,‘{metjod2}’])->middleware(['auth', 'verified']);
+Route::resource(‘{route}’, {Name}Controller::class)->only([‘{method1}’,‘{metjod2}’])->middleware(['auth', 'verified']);*/
+
