@@ -4,6 +4,7 @@ namespace Database\Seeders;
 
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
+use Illuminate\Support\Facades\DB;
 
 class TitlesetSeeder extends Seeder
 {
@@ -15,11 +16,9 @@ class TitlesetSeeder extends Seeder
     public function run()
     {
 
-        DB::table('titleset')->insert([
-            'content' => '0000',
-            'link' => '111',
-        ]);
+        DB::table('titlesets')->insert([
+            'title' => 'site',
 
-    }
+        ]);
     }
 }

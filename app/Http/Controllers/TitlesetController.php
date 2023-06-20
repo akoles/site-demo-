@@ -2,8 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Menuset;
 use App\Models\Titleset;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class TitlesetController extends Controller
 {
@@ -15,7 +17,7 @@ class TitlesetController extends Controller
     public function index()
     {
         $val = Titleset::all();
-        return view('currencies',['title' => Titleset::all(),'data'=>Menuset::all()]);
+        return view('titleset', ['title' => Titleset::all(), 'data' => Menuset::all()]);
     }
 
     /**
@@ -31,9 +33,10 @@ class TitlesetController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
+     * @param \Illuminate\Http\Request $request
+     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Http\RedirectResponse|\Illuminate\Routing\Redirector
      */
+
     public function store(Request $request)
     {
         if ($request->isMethod('post')) {
@@ -47,16 +50,17 @@ class TitlesetController extends Controller
 
         Titleset::create(['title' => $titles]); //create new row in table
 
-        return redirect('currencies');
+        return redirect('account'); //go to dashboard
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\Titleset  $titleset
+     * @param \App\Models\Titleset $titleset
      * @return \Illuminate\Http\Response
      */
-    public function show(Titleset $titleset)
+    public
+    function show(Titleset $titleset)
     {
         //
     }
@@ -64,10 +68,11 @@ class TitlesetController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\Titleset  $titleset
+     * @param \App\Models\Titleset $titleset
      * @return \Illuminate\Http\Response
      */
-    public function edit(Titleset $titleset)
+    public
+    function edit(Titleset $titleset)
     {
         //
     }
@@ -75,11 +80,12 @@ class TitlesetController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Titleset  $titleset
+     * @param \Illuminate\Http\Request $request
+     * @param \App\Models\Titleset $titleset
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Titleset $titleset)
+    public
+    function update(Request $request, Titleset $titleset)
     {
         //
     }
@@ -87,10 +93,11 @@ class TitlesetController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\Titleset  $titleset
+     * @param \App\Models\Titleset $titleset
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Titleset $titleset)
+    public
+    function destroy(Titleset $titleset)
     {
         //
     }

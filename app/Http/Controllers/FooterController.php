@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Footer;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class FooterController extends Controller
 {
@@ -33,6 +34,7 @@ class FooterController extends Controller
      *
      * @param \Illuminate\Http\Request $request
      * @return \Illuminate\Http\Response
+     *
      */
     public function store(Request $request): RedirectResponse
     {
@@ -43,12 +45,12 @@ class FooterController extends Controller
         $titles = $data['row']['title'];
         $links = $data['row']['link'];
         $svg = $data['row']['svg'];
-        $data = array_combine($titles, $links, $svg);
+        $data = array_combine($titles, $links, $svg );
         DB::table('footer')->truncate();//remove all data from table in DB
         foreach ($data as $k => $v) {
             Footer::create(['title' => $k, 'link' => $v, 'svg' => $s]); //create new row intable
         }
-        return redirect('footerset'); //go to dashboard
+        return redirect('account'); //go to dashboard
     }
 
 

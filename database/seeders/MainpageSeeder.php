@@ -4,6 +4,7 @@ namespace Database\Seeders;
 
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
+use Illuminate\Support\Facades\DB;
 
 class MainpageSeeder extends Seeder
 {
@@ -16,10 +17,10 @@ class MainpageSeeder extends Seeder
     {
 
         DB::table('mainpagesets')->insert([
-            'content' => '0000',
+            'title' => '0000',
             'link' => '111',
         ]);
 
     }
-    }
+
 }

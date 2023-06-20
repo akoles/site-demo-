@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Mainpageset;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class MainpageController extends Controller
 {
@@ -43,6 +44,7 @@ class MainpageController extends Controller
         array_shift($data);//remove first element with token info
         $content = $data['content'];
         $link    = $data['link'];
+        $data = array_combine($content, $links);
         DB::table('mainpagesets')->truncate();//remove all data from table in DB
         Mainpageset::create(['content' => $content, 'link' => $link]); //create new row in table
         return redirect('account'); //go to dashboard

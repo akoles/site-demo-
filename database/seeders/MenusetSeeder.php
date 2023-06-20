@@ -16,12 +16,12 @@ class MenusetSeeder extends Seeder
     public function run()
     {
         DB::table('menusets')->insert([
-            'content' => '0000',
+            'title' => '0000',
             'link' => '111',
         ]);
 
 
-      
+
 
     }
 }

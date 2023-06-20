@@ -65,6 +65,10 @@
                                         <span class="input-group-text">Link:</span>
                                         <input type="text" name="row[link][]" class="form-control"
                                                value="<?=$footer->link?>">
+
+                                        <span class="input-group-text">SVG:</span>
+                                        <input type="text" name="row[link][]" class="form-control"
+                                               value="<?=$footer->svg?>">
                                         <button type="button" class="btn bg-danger" value="minus">-</button>
                                         <button type="button" class="btn bg-success" value="plus">+</button>
                                     </div>

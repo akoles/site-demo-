@@ -18,66 +18,23 @@ use App\Http\Controllers\ApiController;
 */
 
 Route::get('/', function (string $home = 'defoult') {
-    return view('welcome');
-});
-
+    return view('welcome');});
 Route::get('/saymyname/{name?}/', function (string $name = 'default') {
-    return view('saymyname', ['name' => $name]);
-});
-
-
+    return view('saymyname', ['name' => $name]);});
 Route::get('/index', function () {
-    return view('index');
-});
-
-Route::get('/Currencies', function () {
-    return view('currencies');
-});
-
+    return view('index');});
 Route::get('/account', function () {
-    return view('account');
-});
-
-Route::get('/Mycourses', function () {
-    return view('mycourcies');
-});
-
-Route::get('/menu', function () {
-    return view('menu');
-});
-Route::get('/Exit', function () {
-    return view('welcome');
-});
-Route::get('/Market', function () {
-    return view('market');
-});
-Route::get('/Privacysettings', function () {
-    return view('privacysettings');
-});
-
-
+    return view('account');});
 Route::get('/convertor', function () {
-    return view('convertor');
-});
+    return view('convertor');});
 
-Route::get('/menuset', function () {
-    return view('menuset');
-});
-Route::get('/titleset', function () {
-    return view('titleset');
 
-});
 Auth::routes();
 Route::get('/', [\App\Http\Controllers\ApiController::class, 'index']);
-
-Route::resource('titlesets', \App\Http\Controllers\TitlesetController::class);
-Route::resource('menusets', \App\Http\Controllers\MenusetController::class);
+Route::get('/Currencies', [\App\Http\Controllers\ApiController::class, 'index2']);
+Route::resource('titleset', \App\Http\Controllers\TitlesetController::class);
+Route::resource('menuset', \App\Http\Controllers\MenusetController::class);
 Route::resource('mainpageset', \App\Http\Controllers\MainpageController::class);
 Route::resource ('guzzle', \App\Http\Controllers\GuzzleController::class);
-
-    Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-    Route::resource('/footerset', \App\Http\Controllers\FooterController::class);
-
-/*Route::resource(‘{route}’, {Name}Controller::class)->only([‘{post}’,‘{metjod2}’])->middleware(['auth', 'verified']);
-Route::resource(‘{route}’, {Name}Controller::class)->only([‘{method1}’,‘{metjod2}’])->middleware(['auth', 'verified']);*/
+Route::resource('/footerset', \App\Http\Controllers\FooterController::class);
 

@@ -13,13 +13,13 @@ class ApiController extends Controller
     public function index(): View
     {
         $response = Http::get('https://api.privatbank.ua/p24api/pubinfo?&exchange&coursid=5');
-        $response_data = $response->json()
+        $response_data = $response->json();
         $formated_data = [];
         foreach ($response_data as $v) {
             $formated_data[$v['ccy']] = array_slice($v, 2, 2, true);
         }
+        dd($formated_data);
         $formated_data['UAH'] = ['buy' => '1', 'sale' => '1'];
-
         return view('index', [
             'convert' => $formated_data,
             'data' => Menuset::all(),
@@ -27,4 +27,21 @@ class ApiController extends Controller
             'content' => Mainpageset::all(),
         ]);
     }
+
+public function index2(): View
+{
+    $response = Http::get('https://api.privatbank.ua/p24api/pubinfo?&exchange&coursid=5');
+    $response_data = $response->json();
+    $formated_data = [];
+    foreach ($response_data as $v) {
+        $formated_data[$v['ccy']] = array_slice($v, 2, 2, true);
+    }
+   /* dd($formated_data);*/
+    return view('currencies', [
+        'convert' => $formated_data,
+        'data' => Menuset::all(),
+        'title' => Titleset::all(),
+        'content' => Mainpageset::all(),
+    ]);
+}
 }
