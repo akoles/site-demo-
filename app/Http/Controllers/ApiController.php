@@ -18,7 +18,7 @@ class ApiController extends Controller
         foreach ($response_data as $v) {
             $formated_data[$v['ccy']] = array_slice($v, 2, 2, true);
         }
-        dd($formated_data);
+
         $formated_data['UAH'] = ['buy' => '1', 'sale' => '1'];
         return view('index', [
             'convert' => $formated_data,
@@ -36,7 +36,6 @@ public function index2(): View
     foreach ($response_data as $v) {
         $formated_data[$v['ccy']] = array_slice($v, 2, 2, true);
     }
-   /* dd($formated_data);*/
     return view('currencies', [
         'convert' => $formated_data,
         'data' => Menuset::all(),

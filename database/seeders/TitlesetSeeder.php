@@ -17,7 +17,7 @@ class TitlesetSeeder extends Seeder
     {
 
         DB::table('titlesets')->insert([
-            'title' => 'site',
+            'title' => '',
 
         ]);
     }

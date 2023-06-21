@@ -17,8 +17,8 @@ class MainpageSeeder extends Seeder
     {
 
         DB::table('mainpagesets')->insert([
-            'title' => '0000',
-            'link' => '111',
+            'title' => '',
+            'link' => '',
         ]);
 
     }

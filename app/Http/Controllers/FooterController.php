@@ -14,9 +14,10 @@ class FooterController extends Controller
      *
      * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View
      */
-    public function index(){
+    public function index()
+    {
 
-        return view('footerset', ['data' =>  footer::all()]);
+        return view('footerset', ['data' => footer::all()]);
     }
 
     /**
@@ -33,23 +34,18 @@ class FooterController extends Controller
      * Store a newly created resource in storage.
      *
      * @param \Illuminate\Http\Request $request
-     * @return \Illuminate\Http\Response
-     *
+     * @return RedirectResponse
      */
-    public function store(Request $request): RedirectResponse
+    public function store(Request $request)
     {
         if ($request->isMethod('post')) {
             $data = $request->post();
         }
         array_shift($data);//remove first element with token info
-        $titles = $data['row']['title'];
-        $links = $data['row']['link'];
-        $svg = $data['row']['svg'];
-        $data = array_combine($titles, $links, $svg );
-        DB::table('footer')->truncate();//remove all data from table in DB
-        foreach ($data as $k => $v) {
-            Footer::create(['title' => $k, 'link' => $v, 'svg' => $s]); //create new row intable
-        }
+        $title = $data['title'];
+        $link    = $data['link'];
+        DB::table('footers')->truncate();//remove all data from table in DB
+        Footer::create(['title' => $title, 'link' => $link]); //create new row in table
         return redirect('account'); //go to dashboard
     }
 

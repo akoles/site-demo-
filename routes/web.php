@@ -1,5 +1,6 @@
 <?php
 
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 use App\Models\Menuset;
 use App\Models\Titleset;
@@ -17,17 +18,12 @@ use App\Http\Controllers\ApiController;
 |
 */
 
-Route::get('/', function (string $home = 'defoult') {
-    return view('welcome');});
 Route::get('/saymyname/{name?}/', function (string $name = 'default') {
     return view('saymyname', ['name' => $name]);});
-Route::get('/index', function () {
-    return view('index');});
 Route::get('/account', function () {
     return view('account');});
 Route::get('/convertor', function () {
     return view('convertor');});
-
 
 Auth::routes();
 Route::get('/', [\App\Http\Controllers\ApiController::class, 'index']);
@@ -37,4 +33,5 @@ Route::resource('menuset', \App\Http\Controllers\MenusetController::class);
 Route::resource('mainpageset', \App\Http\Controllers\MainpageController::class);
 Route::resource ('guzzle', \App\Http\Controllers\GuzzleController::class);
 Route::resource('/footerset', \App\Http\Controllers\FooterController::class);
+/*Route::resource('logout', \App\Http\Controllers\LogoutController::class);*/
 
