@@ -17,9 +17,9 @@ class FooterSeeder extends Seeder
     {
 
         DB::table('footers')->insert([
-            'title' => '',
-            'link' => '',
-            'svg' => ''
+            'title' => '22',
+            'link' => '33',
+            'svg' => '11'
         ]);
 
     }
