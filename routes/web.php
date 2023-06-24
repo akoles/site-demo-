@@ -26,6 +26,7 @@ Route::get('/convertor', function () {
     return view('convertor');});
 
 Auth::routes();
+Route::get('/home', [\App\Http\Controllers\ApiController::class, 'index']);
 Route::get('/', [\App\Http\Controllers\ApiController::class, 'index']);
 Route::get('/Currencies', [\App\Http\Controllers\ApiController::class, 'index2']);
 Route::resource('titleset', \App\Http\Controllers\TitlesetController::class);
@@ -33,5 +34,5 @@ Route::resource('menuset', \App\Http\Controllers\MenusetController::class);
 Route::resource('mainpageset', \App\Http\Controllers\MainpageController::class);
 Route::resource ('guzzle', \App\Http\Controllers\GuzzleController::class);
 Route::resource('/footerset', \App\Http\Controllers\FooterController::class);
-/*Route::resource('logout', \App\Http\Controllers\LogoutController::class);*/
+
 

@@ -3,14 +3,6 @@
 
     <div class="container p-4 pb-0">
         <ul class="container p-4 pb-0">
-            @isset($data)
-                @foreach( $data as $footer)
-                    <li class="container p-4 pb-0">
-                        <a class="container p-4 pb-0"
-                           href="<?= $footer->link ?><?= $footer->title ?><?= $footer->svg ?></a>
-                    </li>
-                @endforeach
-            @endisset
         </ul>
         <section class="mb-4">
             <a class="btn text-white btn-floating m-1"

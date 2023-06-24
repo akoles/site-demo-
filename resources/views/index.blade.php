@@ -7,6 +7,7 @@
             <p><?=$d->content?></p>
         @endforeach
     @endif
+@include('footer')
 @endsection
 
 

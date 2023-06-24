@@ -49,7 +49,7 @@
      </div>
  </div>
 
- @include('footer')
+ @include('footer2')
 
 @endsection
 

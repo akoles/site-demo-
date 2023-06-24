@@ -48,14 +48,15 @@
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                @include('m2')
+                @include('menu')
             </div>
         </div>
     </nav>
 
     <main class="py-4">
         @yield('content')
-        @yield('footer')
+        @yield('currencies')
+        @yield('footer2')
     </main>
 </div>
 </body>

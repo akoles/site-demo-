@@ -17,7 +17,7 @@ class FooterController extends Controller
     public function index()
     {
 
-        return view('footerset', ['data' => footer::all()]);
+        return view('footerset', ['data' => footer2::all()]);
     }
 
     /**
@@ -41,7 +41,9 @@ class FooterController extends Controller
         if ($request->isMethod('post')) {
             $data = $request->post();
         }
+
         array_shift($data);//remove first element with token info
+        /*dd($data);*/
         $title = $data['title'];
         $link    = $data['link'];
         DB::table('footers')->truncate();//remove all data from table in DB
